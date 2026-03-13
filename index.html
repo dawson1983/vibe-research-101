@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作教學：利用 AI 潤飾醫學期刊手稿</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #fff;
+        }
+        
+        body {
+            font-family: 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .step-content {
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .step-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .step-text p {
+            margin: 0;
+            padding-top: 3px;
+        }
+
+        .prompt-box {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 1rem;
+            white-space: pre-wrap;
+        }
+
+        .step-image {
+            width: 100%;
+            display: block;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid #ffeeba;
+            margin-top: 3rem;
+        }
+
+        .conclusion {
+            background: #d4edda;
+            color: #155724;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid #c3e6cb;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI 輔助醫學期刊手稿潤飾：操作教學</h1>
+            <p>一步步帶您了解如何使用 LlamaIndex 與 Claude 完成文獻處理與手稿修改</p>
+        </header>
+
+        <!-- Step 1 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">1</span>
+                    <p>到 https://cloud.llamaindex.ai/ 利用免費額度將 pdf (在付費牆之後的文獻 pdf 檔) 或 docx 轉成 .md 檔</p>
+                </div>
+            </div>
+            <img src="01.png" alt="Step 1" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">2</span>
+                    <p>到 llamaindex.ai 的 history 看轉檔進度，逐一打開下載</p>
+                </div>
+            </div>
+            <img src="02.png" alt="Step 2" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">3</span>
+                    <p>解說下載按鈕</p>
+                </div>
+            </div>
+            <img src="03.png" alt="Step 3" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">4</span>
+                    <p>打開 Claude Desktop App，點選 Cowork，選擇 Work in folder（有剛剛下載的 references 的 markdown 檔案的資料夾，還有草稿 .docx）</p>
+                </div>
+            </div>
+            <img src="04.png" alt="Step 4" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">5</span>
+                    <div>
+                        <p>輸入 Prompt：</p>
+                        <div class="prompt-box">You are the best scientific journal editor and orthopedic surgeon to help me polish my manuscripts, aimed for the journal "The Journal of Foot & Ankle Surgery" and associated publications. The "20260312.docx" is my manuscript.
+
+- please turn my manuscript into main.md first
+- I want to add references in folder "paper.md" to the manuscript. Try to find associated paragraph to support the arguments in my manuscript. You could provide editorial comments paragraph by paragraph
+- separate references into .bib, use appropriate citation format.
+- output in .md first. don't go into .docx directly.</div>
+                    </div>
+                </div>
+            </div>
+            <img src="05.png" alt="Step 5" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">6</span>
+                    <p>進行過程，右邊會列出 AI 認為資料夾相關的檔案，或經由 AI 新產生的檔案</p>
+                </div>
+            </div>
+            <img src="06.png" alt="Step 6" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 7 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">7</span>
+                    <p>可以點選任何檔案，如果是 .md 可以直接在右欄顯示內容，如果針對想要修改的部分，可以複製貼到左下角 prompt 欄，針對該部分進行修改（如： 這段請縮減50%，或加入某某文獻）</p>
+                </div>
+            </div>
+            <img src="07.png" alt="Step 7" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 8 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">8</span>
+                    <p>再針對 AI 給的 Editorial Comments 給予回應</p>
+                </div>
+            </div>
+            <img src="08.png" alt="Step 8" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 9 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">9</span>
+                    <p>再針對 AI 給的 Editorial Comments 給予回應 (同上操作)</p>
+                </div>
+            </div>
+            <img src="09.png" alt="Step 9" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 10 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">10</span>
+                    <p>這裡請 AI 將每個版本另存一份，方便後續追溯比較</p>
+                </div>
+            </div>
+            <img src="10.png" alt="Step 10" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 11 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">11</span>
+                    <p>同前頁（儲存新版本）</p>
+                </div>
+            </div>
+            <img src="11.png" alt="Step 11" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 12 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">12</span>
+                    <p>加入更多 .md 格式的文獻，並請 AI 將這些文獻加入到 manuscript 中</p>
+                </div>
+            </div>
+            <img src="12.png" alt="Step 12" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Step 13 -->
+        <div class="step-card">
+            <div class="step-content">
+                <div class="step-text">
+                    <span class="step-number">13</span>
+                    <p>再存成另一個版本，完稿看過沒問題，請 AI 轉成 .docx 格式，就可以到資料夾拿成果了</p>
+                </div>
+            </div>
+            <img src="13.png" alt="Step 13" class="step-image" loading="lazy">
+        </div>
+
+        <!-- Conclusion & Notes -->
+        <div class="footer-note">
+            <strong>⚠️ 注意事項：</strong><br>
+            如果不指定輸出 markdown 檔，Claude 常常會直接產生 docx, xlsx, pptx 等檔案，過程緩慢又消耗 Tokens（很快就會用完額度，要等 5 小時才能再使用），所以<strong>一定要等最後輸出再轉 docx</strong>。
+        </div>
+
+        <div class="conclusion">
+            <strong>📊 耗時與成本評估：</strong><br>
+            以上作業涵蓋 20 篇 pdf 文獻 + 1 篇 docx 原稿，耗時 30 分鐘，消耗相當於 Claude Pro subscription 5 小時的額度，或每週 10% 的額度。以每月 20 美元計算，成本約 20 / 4.5 / 10 = 0.44 美元。
+        </div>
+
+    </div>
+</body>
+</html>
