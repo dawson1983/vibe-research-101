@@ -2,7 +2,7 @@
 2. 到llamaindex.ai的history看轉檔進度, 逐一打開下載
 3. 解說下載按鈕
 4. 打開Claude Desktop App, 點選Cowork, 選擇Work in folder(有剛剛下載的references的markdown檔案的資料夾, 還有草稿.docx)
-5. 輸入Prompt: You are the best scientific journal editor and orthopedic surgeon to help me polish my manuscripts, aimed for the journal "The Journal of Foot & Ankle Surgery" and associated publications. The "20260312.docx" is my manuscript.
+5. 輸入Prompt: You are the best scientific journal editor and orthopedic surgeon to help me polish my manuscripts, aimed for the journal "......" and associated publications. The "20260312.docx" is my manuscript.
 
 - please turn my manuscript into main.md first
 - I want to add references in folder "paper.md" to the manuscript. Try to find associated paragraph to support the arguments in my manuscript. You could provide editorial comments paragraph by paragraph
